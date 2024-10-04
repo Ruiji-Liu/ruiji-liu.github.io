@@ -165,9 +165,13 @@
 
                 <div class='row vspace-top'>
                     <div class="col-sm-3">
-                        <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                        <video id="myVideo" width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
                             <source src="imgs/videos/visualization.mp4" type="video/mp4">
                         </video>
+                        
+                        <script>
+                            document.getElementById('myVideo').playbackRate = 1.5;  // Set video speed to 1.5x
+                        </script>
                     </div>
 
                     <div class="col">
