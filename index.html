@@ -1,145 +1,481 @@
+
 <!DOCTYPE html>
-<!--
-    Ruiji Liu's personal website!
-    Name:   Ruiji Liu
-    Email:  ruijil@andrew.cmu.edu
-    Date:   [Last Updated]
--->
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Scripts for dynamic content -->
-    <script src="/assets/js/scripts.js"></script>
-    <script src="assets/js/news.js"></script>
-    <script src="assets/js/publications.js"></script>
-
     <title>Ruiji Liu</title>
 
-    <meta name="description" content="Ruiji Liu's personal homepage.">
-    <link rel="canonical" href="/">
-    <link rel="alternate" type="application/rss+xml" title="Ruiji Liu" href="/feed.xml">
-    <link rel="icon" type="image/ico" href="assets/images/your-icon.png">
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Icon libraries and fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|Roboto+Condensed:700&subset=latin" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="assets/css/main.css">
-
-    <!-- Open Graph and Twitter meta tags -->
-    <meta property="og:url" content="/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Ruiji Liu">
-    <meta property="og:description" content="">
-    <meta property="og:site_name" content="Ruiji Liu">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:url" content="/">
-    <meta name="twitter:title" content="Ruiji Liu">
-    <meta name="twitter:description" content="">
-    <meta property="og:image" content="assets/images/some-image.png">
-    <meta name="twitter:image" content="assets/images/some-image.png">
-    
-    <!-- Google Tag Manager (if applicable) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'YOUR_TRACKING_ID');
-    </script>
-    
-    <!-- GitHub and LinkedIn buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicicons@1.8.6/css/academicicons.min.css">
+    <!-- Custom Styles -->
+    <style>
+          body {
+            font-family: Roboto, 'sans-serif';
+            font-size: 16px;
+            background-color: #FFFFFF;
+            color: #4F6071;
+          }
+          h1 {
+              font-weight: 300;
+              font-size: 2rem;
+          }
+          #header {
+            background-color: #f4f4f4;
+            /*background-color: #FFFFFF;*/
+            display: flex;
+            align-items: flex-end;
+            padding-top:60px;
+            padding-bottom:60px;
+          }
+          #footer {
+            background-color: #FFFFFF;
+            padding:60px;
+          }
+          #portrait {
+            border: 3px solid white;
+          }
+          #header-text {
+            margin-top: 60px;
+            margin-left: 220px;
+          }
+          #header-text-name {
+            font-size: 50px;
+          }
+          #header-text-title {
+              font-size: 25px;
+          }
+          #header-text-affiliation {
+              font-size: 25px;
+              margin-top: 18px;
+          }
+          #header-text-email {
+            margin-top: 18px;
+            font-size: 25px;
+            font-style: italic;
+          }
+          .header-text-desc {
+            font-size: 20px;
+          }
+          .vspace-top {
+            margin-top: 30px;
+          }
+          .vspace-top-news {
+              margin-top: 15px;
+          }
+          .paper-image {
+            width: 150px;
+          }
+          .news-date {
+              font-weight: bold;
+          }
+          .paper-title {
+            font-weight: bold;
+          }
+          .paper-authors {
+            font-style: italic;
+          }
+	  .social-icons a {
+    margin: 0 10px; /* Space between icons */
+	}
+	  .social-icons i {
+    font-size: 24px; /* Adjust size as needed */
+    color: #333; /* Set icon color */
+	}
+    </style>
 </head>
 
 <body>
-    <div id="shadow"></div>
-    <main class="content-wrapper">
-        <!-- Theme Switcher -->
-        <div class="theme-switch-wrapper">
-            <button class="theme-switch" id="theme-switch" title="Toggle dark/light mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-        <!-- Profile Section -->
-        <div class="profile-container">
-            <!-- Left: Profile Image and Social Links -->
-            <div class="profile-left">
-                <div class="profile-image">
-                    <img src="assets/images/portrait.jpg" alt="Ruiji Liu" class="avatar">
+    <div id='header'>
+        <div class='container'>
+            <div class='row align-items-center'>
+                <div class="col-sm-5 offset-sm-1 d-flex justify-content-center">
+                    <img src='imgs/portrait.jpg' class='img-fluid' id='portrait'>
                 </div>
-                <div class="social-links">
-                    <a href="mailto:ruijil@andrew.cmu.edu" class="social-icons"><i class="fa-regular fa-envelope"></i></a>&nbsp;&nbsp;
-                    <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" class="social-icons"><i class="ai ai-google-scholar"></i></a>&nbsp;&nbsp;
-                    <a href="https://www.linkedin.com/in/ruiji-liu/" class="social-icons"><i class="fab fa-linkedin-in"></i></a>&nbsp;&nbsp;
-                    <a href="https://github.com/Ruiji-Liu" class="social-icons"><i class="fab fa-github"></i></a>&nbsp;&nbsp;
-                    <a href="https://twitter.com/RuijiLiu" class="social-icons"><i class="fab fa-twitter"></i></a>
+
+                <div class="col d-flex flex-column align-items-center text-center">
+                  <div id='header-text-name'>
+                      Ruiji Liu
+                  </div>
+                    <div id='header-text-title'>
+                        Graduate Research Assistant, <a href="https://labs.ri.cmu.edu/kantorlab/research/">Kantor Lab</a>
+                    </div>
+                    <div id='header-text-affiliation'>
+                        <a href="https://www.ri.cmu.edu/">CMU Robotics Institute</a></br>
+                    </div>
+                  <div id='header-text-email'>
+                        ruijil@andrew.cmu.edu
+                  </div>
+<!--                   <div id='header-text-title'>
+                    <br><a href="https://scholar.google.com/citations?hl=en&user=2iMq38YAAAAJ&view_op=list_works&sortby=pubdate">[Google Scholar]</a>
+                    <a href="https://www.linkedin.com/in/ruiji-liu/">[LinkedIn]</a>
+                    <a href="docs/CV_Ruiji_Liu.pdf">[Download CV]</a>
+                  </div> -->
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;" id='header-text-title'>
+                    <div class="about-button" style="margin-right: 20px;">
+                        <a class="main-btn" href="docs/CV_Ruiji_Liu.pdf">
+                            <i class="fas fa-file-alt"></i> CV
+                        </a>
+                    </div>
+                    <div class="social-icons" style="display: flex; align-items: center;">
+                        <a style="margin-right: 10px;" href="https://scholar.google.com/citations?hl=en&user=2iMq38YAAAAJ&view_op=list_works&sortby=pubdate">
+                            <i class="fas fa-graduation-cap" style="font-size:1.5rem"></i>
+                        </a>
+                        <a style="margin-right: 10px;" href="https://github.com/Ruiji-Liu">
+                            <i class="fab fa-github" style="font-size:1.5rem"></i>
+                        </a>
+                        <a style="margin-right: 10px;" href="https://www.linkedin.com/in/ruiji-liu/">
+                            <i class="fab fa-linkedin" style="font-size:1.5rem"></i>
+                        </a>
+                    </div>
+                </div>                
                 </div>
             </div>
-            <!-- Right: Name and Introduction -->
-            <div class="profile-right">
-                <div class="name-title">
-                    <div class="name">
-                        Ruiji Liu
-                        <span class="name-info">
-                            <i class="fas fa-info-circle"></i>
-                            <span class="tooltip">
-                                <h3>How to Pronounce My Name</h3>
-                                <p>My name, <strong>Ruiji</strong>, is pronounced as "Rui-jee".</p>
-                            </span>
-                        </span>
+        </div>
+    </div>
+
+
+    <div class='container'>
+        <div class='row vspace-top'>
+            <div class='col offset-sm-1'>
+                <h1><b>Bio</b></h1>
+                <p>
+                    Hi! I am Ruiji Liu, a Graduate Research Assistant at <a href="https://labs.ri.cmu.edu/kantorlab/research/">Kantor Lab</a>, <a href="https://www.ri.cmu.edu/">CMU Robotics Institute</a>. 
+                    I am working on Intelligent robot arm manipulation with AI and autonomous navigation in field robotics under the guidance of <a href="https://www.ri.cmu.edu/ri-faculty/george-a-kantor/">Prof. George Kantor</a>.
+                    I am interested in research problems related to <b>Perception & Control</b> for autonomous navigation and manipulation with AI on various robotic systems (UGV, UAV, & legged robots) 
+                    in diverse environments. My research goal is to enable robots to replace humans in dangerous tasks like rescue or discovery in unknown 
+                    environments and in tedious tasks such as transporting goods. Specifically, I am interested in research areas including <b>CV, SLAM, path planning, & control</b> with
+                    <b>Robot Learning</b> methods applied.
+                </p>
+                <p>   
+                    Previously, I received my master of science degree in mechanical engineering with a concentration in robotics and control systems at CMU, supervised by <a href="https://www.ri.cmu.edu/ri-faculty/george-a-kantor/">Prof. George Kantor</a>. 
+                    I worked as a research assistant in <a href="https://labs.ri.cmu.edu/kantorlab/research/">Kantor Lab</a>, researching on lidar-Based crop-agnostic autonomous navigation. My master's thesis is <a href="https://arxiv.org/abs/2403.17774">
+                    "Towards Over-Canopy Autonomous Navigation: Crop-Agnostic LiDAR-Based Crop-Row Detection in Arable Fields"</a>. Before my master, I received my bachelor of science degree in mechanical engineering at 
+                    Penn State University, where I was advised by <a href="https://www.me.psu.edu/department/directory-detail-g.aspx?q=JZM14">Prof. Jason Moore</a> and <a href="https://www.aero.psu.edu/department/directory-detail-g.aspx?q=azw78">Prof. Alan Wagner</a>. 
+                    During my undergradue, I worked on construction robot and medical robot. 
+
+                </p>
+
+
+
+                <div class='vspace-top'>
+                    <h1><b>Publications & Technical Reports</b></h1>
+                </div>
+
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                        <video id="myVideo" width="100%" height="110px" autoplay="" loop="" preload="" muted="">
+                            <source src="imgs/videos/visualization.mp4" type="video/mp4">
+                        </video>
+                        
+                        <script>
+                            document.getElementById('myVideo').playbackRate = 2.5;  // Set video speed to 1.5x
+                        </script>
                     </div>
-                    <div class="title-affiliation">
-                        <p>Graduate Research Assistant, Kantor Lab</p>
-                        <p>CMU Robotics Institute</p>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                            Towards Over-Canopy Autonomous Navigation: Crop-Agnostic LiDAR-Based Crop-Row Detection in Arable Fields
+                        </div>
+                        <div class='paper-desc'>
+                            ICRA 2025 (Accepted)
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Ruiji Liu</b>, Francisco Yandun, and George Kantor
+                        </div>
+                        <div>
+                            <a href="https://ruiji-liu.github.io/crop_row_detection.github.io/">[Project page]</a>
+                            <a href="https://arxiv.org/abs/2403.17774">[Paper]</a>
+                            <a href="https://github.com/Kantor-Lab/LiDAR_CropRowDetection">[Code]</a>
+                            <a href="https://youtu.be/FYJuxgDMiHE">[Video]</a>
+                            
+                        </div>
                     </div>
                 </div>
-                <div class="introduction">
-                    <p>I am a Graduate Research Assistant at <a href="https://labs.ri.cmu.edu/kantorlab/research/">Kantor Lab</a> within the <a href="https://www.ri.cmu.edu/">CMU Robotics Institute</a>. My research focuses on intelligent robot arm manipulation and autonomous navigation, leveraging AI to solve challenging robotics problems.</p>
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                        
+                        <img src='imgs/endoscope.jpg' class='img-fluid' style="max-width: 100%; height: auto; width: 300px; height: 110px;">
+                        
+                    </div>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                            Evaluation of Endoscope Control Assessment System
+                        </div>
+                        <div class='paper-desc'>
+                            Design of Medical Devices Conference, 2022
+                        </div>
+                        <div class='paper-authors'>
+                            Saira Hussain, Yuqi Zhou, <b>Ruiji Liu</b>, Eric Pauli, Randy Haluck, Barry Fell, Jason Moore
+                        </div>
+                        <div>
+                            <!-- <a href="https://sites.google.com/andrew.cmu.edu/ruiji-liu/novel-endoscope-control-assessment-using-video-and-magnetic-tracking">[Project page]</a> -->
+                            <a href="https://asmedigitalcollection.asme.org/BIOMED/proceedings/DMD2022/84815/V001T11A009/1140655">[Paper]</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                        <video width="100%" height="110px" playsinline="" autoplay="" loop="" preload="" muted="">
+                            <source src="imgs/videos/lanternfly.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                            AIIRA Autonomous Robot Control for Spotted Lanternflies
+                        </div>
+                        <div class='paper-desc'>
+                            Technical Report (Farm-ng Competition), 2023
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Ruiji Liu</b>, Francisco Yandun, David Wettergreen, George Kantor, <a href="https://docs.google.com/presentation/d/18tbGhkk1iR3cZrGp96BIVcRCAc0XBdN6/edit#slide=id.p7">etc.</a>
+                        </div>
+                        <div>
+                            <!-- <a href="https://sites.google.com/andrew.cmu.edu/ruiji-liu/aiira-autonomous-robot-control-for-spotted-lanternflies-using-deep-learning">[Project page]</a> -->
+                            <a href="https://drive.google.com/file/d/1QBhSptzKcb49WT6lTdaL-jzE0UQUPnCc/view">[Paper]</a>
+                            <a href="https://www.youtube.com/watch?v=jTWhQ8cPPwM&t=9s">[Video]</a>
+                            <a href="https://docs.google.com/presentation/d/18tbGhkk1iR3cZrGp96BIVcRCAc0XBdN6/edit#slide=id.p1">[PPT]</a>
+                            <a href="https://docs.google.com/presentation/d/1yi7t30fSGbtB8msTvi6y6nif6rwf6Cll/edit#slide=id.p1">[Poster]</a>
+                            <a href="https://technical.ly/software-development/cmu-robotics-research-tartanpest-tartandrive/">[News]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                        <img src='imgs/reconstruct.png' class='img-fluid'>
+                    </div>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                            3D reconstruction for tunnel inspection based on RGB-D data
+                        </div>
+                        <div class='paper-desc'>
+                            Technical Report (CMU-16833), 2022
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Ruiji Liu</b>, Xiaoyang Zhan, Yumeng Xiu, Yufeng Ren, Hanjiang Hu, Zixuan Zhang
+                        </div>
+                        <div>
+                            <a href="https://drive.google.com/file/d/1xU3cQ7w7dh3DHUaxJViwyfqHbYlIMMR6/view">[Paper]</a>
+                            <a href="https://github.com/YumengXiu/3D-reconstruction-for-tunnel-inspection-based-on-RGB-D-data">[Code]</a>
+                            <a href="https://docs.google.com/presentation/d/1fYkI_6-woPkeevByBCtwCcrBgfI3Vu9czEX9z-Nd_yA/edit?usp=sharing">[PPT]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                        <video width="100%" height="110px" playsinline="" autoplay="" loop="" preload="" muted="">
+                            <source src="imgs/videos/pushT.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                            Push-T Experiment with Diffusion Policy and DQN
+                        </div>
+                        <div class='paper-desc'>
+                            Technical Report (CMU-16831), 2024
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Ruiji Liu</b>, Morgan Mayborne, Vina Wei
+                        </div>
+                        <div>
+                            <a href="https://drive.google.com/file/d/1YDFJax41-rTkBh6YSZu9yJauaMcuoSb9/view?usp=sharing">[Paper]</a>
+                            <a href="https://github.com/SkyWatcher-123/16831_project">[Code]</a>
+                            <a href="https://drive.google.com/drive/folders/1FTvsIYqSWPHEcY-cGOvLf4ecjoxwsr1N?usp=sharing">[Data]</a>
+                            <a href="https://docs.google.com/presentation/d/1QKMiFl7LiHyxCqBcJGvUAgbozj56Lxvic-ptCKesWng/edit?usp=sharing">[PPT]</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                        
+                        <video width="100%" height="110px" playsinline="" autoplay="" loop="" preload="" muted="">
+                            <source src="imgs/videos/f1tenth.mp4" type="video/mp4">
+                        </video>
+                        
+                    </div>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                            Defend Like-a-Lion: Defensive Racing Maneuvers Utilizing Visual Localization
+                        </div>
+                        <div class='paper-desc'>
+                            Technical Report (CMU-16663), 2024
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Ruiji Liu</b>, Letian Leng, Yutong Huang
+                        </div>
+                        <div>
+                            <a href="https://f1tenth.org/">[F1tenth]</a>
+                            <a href="https://drive.google.com/file/d/10TswpLwegZzIbINHtTYHuS-CjbJBBE6Y/view?usp=sharing">[Paper]</a>
+                            <a href="https://github.com/Ruiji-Liu/F1tenth">[Code]</a>
+                            <a href="https://docs.google.com/presentation/d/1PntuV0GBzKMEaHY6rl8C1XtGRqcdkERDLEwBPPSTzlg/edit#slide=id.p">[PPT]</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                        
+                            <img src='imgs/house.jpg' class='img-fluid' style="max-width: 100%; height: auto; width: 300px; height: 110px;">
+                        
+                    </div>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                            Finding Optimal Machine Learning Regression Model for House Prices Prediction
+                        </div>
+                        <div class='paper-desc'>
+                            Technical Report (CMU-24787), 2024
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Ruiji Liu</b>, Yu Qiu, Runpu Meng, Zongyuan Wu
+                        </div>
+                        <div>
+                            <a href="https://drive.google.com/file/d/1G-TX1XjlNtnEnlbOjk34gMjWEPHbektq/view">[Paper]</a>
+                            <a href="https://drive.google.com/file/d/1m9lj0StAmF4UkMzPULiDnDevEe4fRWG1/view">[Code]</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                        
+                            <img src='imgs/psuACT.jpg' class='img-fluid' style="max-width: 80%; height: auto; width: 300px; height: 110px;">
+                        
+                    </div>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                            The Pennsylvania State University Advanced Vehicle Team’s Concept Design for the SAE AutoDrive Challenge II Competition’s Perception Cart
+                        </div>
+                        <div class='paper-desc'>
+                            Technical Report (SAE AutoDrive Challegne II Competition), 2022
+                        </div>
+                        <div class='paper-authors'>
+                            A. Anand, C. Frantz, ..., <b>Ruiji Liu</b>,..., etc.
+                        </div>
+                        <div>
+                            <a href="https://drive.google.com/file/d/1lgwUF4b_azwCjISuE__vctK2zXMBEExw/view">[Paper]</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3">
+                        
+                        <video width="100%" height="110px" playsinline="" autoplay="" loop="" preload="" muted="">
+                            <source src="imgs/videos/etch-a-sketech.mp4" type="video/mp4">
+                        </video>
+                        
+                    </div>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                            Autonomous Etch-A-Sketch
+                        </div>
+                        <div class='paper-desc'>
+                            Technical Report (PSU-ME340), 2021
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Ruiji Liu</b>, Ryan Maziarz, Alex Nellis
+                        </div>
+                        <div>
+                            <a href="https://drive.google.com/file/d/1PussVSnpTTEAZe8kidfeJSaDhU9qzOQV/view?usp=sharing">[Paper]</a>
+                            <a href="https://drive.google.com/drive/folders/1CORA8HdG5LX9UZC8cpCXsQBBlgg7RkGz">[Code]</a>
+                            <a href="https://drive.google.com/file/d/1ihSvT9FNwUbOuLPrSaE3uQGV6pyv1XL0/view">[Video]</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class='row vspace-top align-items-center'>
+                    <div class="col-sm-3">
+                        
+                        <video width="100%" height="110px" playsinline="" autoplay="" loop="" preload="" muted="">
+                            <source src="imgs/videos/mcreu.mp4" type="video/mp4">
+                        </video>
+                        
+                    </div>
+
+                    <div class="col">
+                        <div class='paper-title'>
+                        Automatic Path-Planning and Map Drawing by Husky Robot and the Realization of Robot Simulation in Unity   
+                        </div>
+                        <div class='paper-desc'>
+                            Technical Report (PSU MC-REU Scholarship), 2021
+                        </div>
+                        <div class='paper-authors'>
+                            <b>Ruiji Liu</b>, Alan Wagner
+                        </div>
+                        <div>
+                            <a href="https://drive.google.com/file/d/1m46uN_6Y8ZrahlNuHbTH5deOX0bLnGDx/view">[Paper]</a>
+                            <a href="https://psu.mediaspace.kaltura.com/media/Automatic+Path-Planning+and+Map+Drawing+by+Using+the+Husky+Robot+and+the+Realization+of+Robot+Simulation+in+Unity./1_afuifcau/218440933">[Talk]</a>
+                            <a href="https://drive.google.com/file/d/1ie-jxcGG4Xjx9-asnphN3LDXtZcT_hms/view">[Video]</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class='vspace-top'>
+                    <h1><b>Academic Services</b></h1>
+                    <ul>
+                        <li><b>Reviewer of ICRA and IROS</b><span style="float: right;">2024-</span></li>
+                        <!-- <li><b>Teaching Assistant</b>,  CMU ME 24787, Intro to Machine Learning <span style="float: right;">Aug. 2023 ~ Dec. 2023</span> </li> -->
+                        <li><b>Grading Assistant</b>, PSU ME 330, Computational Tools <span style="float: right;">Jan. 2022 ~ May. 2022</span></li>
+                        <li><b>Teaching Assistant</b>, PSU CHEM 112, Chemical Principles II <span style="float: right;">Jan. 2020 ~ May. 2020</span></li>
+                    </ul>
+                </div>
+                <div class='vspace-top'>
+                    <h1><b>Education</b></h1>
+                    <ul>
+                        <li><b>Master in Mechanical Engineering, Carnegie Mellon University</b> <span style="float: right;">Aug. 2022 ~ May. 2024</span></li>
+                        <li><b>Bachelor in Mechanical Engineering, Pennsylvania State University</b><span style="float: right;">Aug. 2018 ~ May. 2022</span></li>
+                    </ul>
+                </div>
+                <div class='vspace-top'>
+                    <h1><b>Skills</b></h1>
+                    <ul>
+                        <li><b>Programming:</b>Advanced–Python, MATLAB, Intermediate–C/C++, C#, Beginner–R, Julia</li>
+                        <li><b>Tools:</b>ROS, PyTorch, OpenCV, Linux, Docker, Git</li>
+                        <li><b>Softwares:</b>SolidWorks, Unity, Gazebo, CATIA V5</li>
+                        <li><b>Languages:</b>English (fluent), Mandarin (native)</li>
+                    </ul>
+                </div>
+                <div class='vspace-top'>
+                    <h1><b>Outreach</b></h1>
+                    <ul>
+                        <li><b>IVSG Auto Work Mapping Van</b> (ROS, Sensing, Mapping) </li>
+                        <li><b>AUTODRIVE CHALLENGE II Perception Cart</b> (ROS, Sensing, ML, Vision)</li>
+                        <li><b>Autonomous Construction Robot</b> (ROS, Sensing, 3D Reconstruct, Planning)</li>
+                        <li><b>Autonomous Etch-A-Sketch</b> (MATLAB, Arduino, Electronics)</li>
+                        <li><b>RoboMaster Autonomous Combat Robot</b> (Vision, CAD, Control, Planning) </li>
+                    </ul>
+                </div>
+
+     <div class="item">
+	     <div class="item_inline item_image" style="width: 200px; height: 150px; padding-right: 15px; margin: 20px auto; vertical-align: middle; display: flex; justify-content: center; align-items: center;">
+            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=Mc7sboFX1Bs5vxR_11PRI32rMCKcEjFLxj8DDpO9XHA&cl=ffffff&w=a"></script>
         </div>
+    </div>
+                
 
-        <!-- Main Sections -->
-        <div class="section">
-            <h2>News</h2>
-            <div id="news-container"></div>
-        </div>
 
-        <div class="section">
-            <h2>Publications & Technical Reports</h2>
-            <div id="publications-container"></div>
-        </div>
+    <div id='footer' class='vspace-top'>
+    <div>
 
-        <!-- Additional sections (Bio, Academic Services, Education, Skills, Outreach) can be added here -->
-        <!-- You can either integrate them as additional sections or link to separate pages -->
-
-    </main>
-
-    <footer class="blog-footer content-wrapper">
-        <p>
-            Related Links:&nbsp;&nbsp;
-            <img src="assets/images/kantorlab-logo.png" style="height: 1.2em; vertical-align: middle;"> <a href="https://labs.ri.cmu.edu/kantorlab/research/">Kantor Lab</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-            <a href="https://www.ri.cmu.edu/">CMU Robotics Institute</a>
-        </p>
-        <p>Copyright &copy; <span class="full-year"></span> Ruiji Liu. All rights reserved.</p>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/news.js"></script>
-    <script src="assets/js/publications.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            new NewsManager('news-container');
-            new PublicationManager('publications-container');
-        });
-    </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
